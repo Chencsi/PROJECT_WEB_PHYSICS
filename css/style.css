@@ -4,6 +4,7 @@ body{
     background-attachment: fixed;
     background-size: cover;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    height: 90vh;
 }
 
 footer .ver{
@@ -14,6 +15,21 @@ footer .ver{
 
 h1{
   letter-spacing: 3px;
+}
+
+#temakorok p{
+  text-align: justify;
+}
+
+.title-author, h2{
+  background-color: #A7B7DE;
+  padding: 15px 10px 10px 10px;
+  border: solid 0px white;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgb(48, 48, 48);
+  text-shadow: 2px 2px 5px black;
+  color: white;
+  font-variant: small-caps;
 }
 
 .container {
@@ -33,15 +49,21 @@ h1{
   right: 15px;
 }
 
+.otl:hover{
+  border-radius: 10px;
+  transform: scale(90%);
+  transition: transform 0.6s, border-radius 0.6s;
+}
+
 .otl{
-  width: 74px;
+  width: 60px;
   position: absolute;
   top: 32px;
   right: 32px;
 }
 
 .home{
-  height: 85vh;
+  height: 100%;
 }
 
 .news a{
@@ -53,7 +75,7 @@ h1{
   transition: color 0.2s;
 }
 
-.box h1{
+.box h1, h1{
   text-align: center;
   text-shadow: 2px 2px 5px black;
   color: white;
@@ -93,4 +115,14 @@ h1{
 .navlinks a:hover{
   color: rgb(0, 0, 0);
   letter-spacing: 2px;
+}
+
+.hide{
+  display: none;
+}
+
+#panel1, #panel2, #panel3,
+#panel4, #panel5, #panel6,
+#panel7, #panel8, #panel9{
+  display: none;
 }
