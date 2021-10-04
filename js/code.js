@@ -1,6 +1,17 @@
+/*
+  Készítette: Chen Kevin 10.c
+*/
 $(document).ready(function(){
+  let baseUrl = (window.location).href;
+  let koopId = baseUrl.substring(baseUrl.lastIndexOf('=') + 36);
   $(".fadein, .home, #rolunk, #temakorok, #osszefoglalo").hide(0);
-  $(".fadein, .home").fadeIn(1500);
+  $(".fadein").fadeIn(1500);
+  if (koopId != "#") {
+    $(".home").delay(0).fadeOut(0);
+    $(koopId).delay(500).fadeIn(600)
+  } else {
+    $(".home").fadeIn(1500);
+  }
 });
 
 function logoFunction(){
@@ -12,8 +23,8 @@ function NavFunction(event){
   $(".home, #rolunk, #temakorok, #osszefoglalo").delay(150).fadeOut(500);
   let page = $(event.target).attr('class').split(" ")
   console.log("Tartalom cserélése a következőre: "+page[1])
-  $(".home").delay(150).fadeOut(500);
-  $("#"+page[1]).delay(500).fadeIn(500)
+  $(".home").delay(1000).fadeOut(600);
+  $("#"+page[1]).delay(1000).fadeIn(600)
 }
 
 function dropdown(event){
