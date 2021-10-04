@@ -6,9 +6,13 @@ $(document).ready(function(){
   let koopId = baseUrl.substring(baseUrl.lastIndexOf('#'));
   $(".fadein, .home, #rolunk, #temakorok, #osszefoglalo").hide(0);
   $(".fadein").fadeIn(1500);
-  if (koopId != "#") {
-    $(".home").delay(0).fadeOut(0);
-    $(koopId).delay(500).fadeIn(600)
+  if (window.location.href.indexOf("#") > -1) {
+    if (koopId != "#") {
+      $(".home").delay(0).fadeOut(0);
+      $(koopId).delay(500).fadeIn(600)
+    } else {
+      $(".home").fadeIn(1500);
+    }
   } else {
     $(".home").fadeIn(1500);
   }
