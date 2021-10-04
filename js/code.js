@@ -3,7 +3,7 @@
 */
 $(document).ready(function(){
   let baseUrl = (window.location).href;
-  let koopId = baseUrl.substring(baseUrl.lastIndexOf('=') + 36);
+  let koopId = baseUrl.substring(baseUrl.lastIndexOf('#'));
   $(".fadein, .home, #rolunk, #temakorok, #osszefoglalo").hide(0);
   $(".fadein").fadeIn(1500);
   if (koopId != "#") {
