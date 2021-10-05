@@ -10,6 +10,7 @@ $(document).ready(function(){
     if (koopId != "#") {
       $(".home").delay(0).fadeOut(0);
       $(koopId).delay(500).fadeIn(600)
+      document.title = "OTL - "+koopId.substring(1,10);
     } else {
       $(".home").fadeIn(1500);
     }
@@ -27,11 +28,12 @@ function NavFunction(event){
   $(".home, #rolunk, #temakorok, #osszefoglalo").delay(150).fadeOut(500);
   let page = $(event.target).attr('class').split(" ")
   console.log("Tartalom cserélése a következőre: "+page[1])
+  document.title = "OTL - "+page[1]
   $(".home").delay(1000).fadeOut(600);
   $("#"+page[1]).delay(1000).fadeIn(600)
 }
 
-function dropdown(event){
+function dropdownAnimation(event){
   let flip = $(event.target).attr('class').split(" ")
   if (flip[0] == "flip1"){
     $("#panel1, #panel2, #panel3").slideToggle("slow");
@@ -43,6 +45,15 @@ function dropdown(event){
     $("#panel7, #panel8, #panel9").slideToggle("slow");
     $("#panel4, #panel5, #panel6, #panel1, #panel2, #panel3").slideUp();
   }
+}
+
+/*$("h3").click(function(event) {
+  
+  dropdownAnimation(event);
+});*/
+
+function dropdown(event){
+  dropdownAnimation(event);
 }
 
 $("button").click(function(){

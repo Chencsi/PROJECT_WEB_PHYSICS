@@ -1,6 +1,7 @@
 /*
   Készítette: Chen Kevin 10.c
 */
+/* TAGEK */
 html{
   cursor: crosshair;
   scroll-behavior: smooth;
@@ -12,6 +13,7 @@ body{
     background-size: cover;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     height: 90vh;
+    font-size: 1.9vh;
 }
 
 footer .ver{
@@ -20,51 +22,17 @@ footer .ver{
   color: gray;
 }
 
-h1{
-  letter-spacing: 3px;
-}
-
 b{
-  animation: szin 5s infinite;
+  animation: szin 20s infinite;
+  color: black;
+  border-radius: 20px;
+  padding: 2px 5px 2px 5px;
+  font-weight: normal;
 }
 
-#temakorok p{
-  text-align: justify;
-}
-
-.container {
-  color: white;
-}
-
-.menu-img{
-  height: 40px;
-  width: 40px;
-  margin-top: 5px;
-}
-
-.logo{
-  width: 45px;
-  position: absolute;
-  top: 10px;
-  right: 15px;
-}
-
-.otl:hover{
-  border-radius: 10px;
-  transform: scale(90%);
-}
-
-.otl{
-  transition: transform 0.6s, border-radius 0.6s;
-  width: 60px;
-  position: absolute;
-  top: 32px;
-  right: 32px;
-}
-
-.home{
-  height: 100%;
-}
+h1{letter-spacing: 3px;}
+p{text-align: justify;}
+#osszefoglalo h3{background-color:#838fad; padding: 5px; border-radius: 2px;}
 
 .news a{
   color: lightskyblue;
@@ -75,63 +43,16 @@ b{
   transition: color 0.2s;
 }
 
-.box h1, h1{
+.box h1{
   text-align: center;
   text-shadow: 2px 2px 5px black;
   color: white;
 }
-.box{
-  background-color: #A7B7DE;
-  border: solid 0px white;
-  border-radius: 10px;
-  animation: billeges 5s infinite;
-  box-shadow: 2px 2px 5px rgb(48, 48, 48);
-}
 
-@keyframes billeges{
-  0%{
-    rotate: 3deg;
-  }
-  50%{
-    rotate: -3deg;
-  }
-  100%{
-    rotate: 3deg;
-  }
-}
-
-@keyframes szin{
-  0%{
-    font-weight: normal;
-    background-color: #CEDDEB;
-    color: black;
-    border-radius: 20px;
-    padding: 2px 5px 2px 5px;
-  }
-  20%{
-    background-color: #e2bbfd;
-  }
-  40%{
-    background-color: #f49595;
-  }
-  60%{
-    background-color: #f9eb97;
-  }
-  80%{
-    background-color: #c6f9ac;
-  }
-  100%{
-    background-color: #CEDDEB;
-    color: black;
-    border-radius: 20px;
-    padding: 2px 5px 2px 5px;
-    font-weight: normal;
-  }
-}
-
+/* OSZTALYOK */
 .nav-mobile{
   position: relative;
-  background-color: #8CA1A5;
+  background-color: #CEDDEB;
 }
 .nav-item{
   background-color: #CEDDEB;
@@ -158,28 +79,123 @@ b{
   letter-spacing: 2px;
 }
 
-.hide{
-  display: none;
+.menu-img{
+  height: 40px;
+  width: 40px;
+  margin-top: 5px;
 }
+
+.logo{
+  width: 45px;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  transition: transform 0.6s, border-radius 0.6s;
+}
+
+.otl:hover, .logo:hover{
+  border-radius: 10px;
+  transform: scale(90%);
+}
+
+.otl{
+  transition: transform 0.6s, border-radius 0.6s;
+  width: 60px;
+  position: absolute;
+  top: 32px;
+  right: 32px;
+}
+
+.box{
+  background-color: #A7B7DE;
+  border: solid 0px white;
+  border-radius: 10px;
+  animation: billeges 5s infinite;
+  box-shadow: 2px 2px 5px rgb(48, 48, 48);
+}
+
+.container{color: white;}
+.home{height: 100%;}
+.hide{display: none;}
 
 .title-author:hover, h2:hover{
   cursor: pointer;
+  background-color: #838fad;
+  box-shadow: 5px 5px 0px #a1a179;
+  color: white;
 }
 
-.title-author, h2{
+h3{
+  user-select: none;
+  pointer-events: none;
+}
+
+.title-author{
   background-color: #A7B7DE;
   padding: 15px 10px 10px 10px;
   border: solid 0px white;
   border-radius: 10px;
-  box-shadow: 2px 2px 5px rgb(48, 48, 48);
-  text-shadow: 2px 2px 5px black;
-  color: white;
-  font-variant: small-caps;
+  box-shadow: 5px 5px 0px #dddea7;
+  color: #35383f;
+  text-transform: uppercase;
+  transition: background-color 0.3s, box-shadow 0.3s, color 0.3s;
+  position: relative;
 }
 
-#panel1, #panel2, #panel3,
-#panel4, #panel5, #panel6,
-#panel7, #panel8, #panel9{
-  display: none;
-  text-shadow: black 2px 2px 6px;
+#panel1,#panel2,#panel3,#panel4,#panel5,#panel6,#panel7,#panel8,#panel9{display: none}
+
+/* ANIMACIOK, TORESPONTOK */
+@keyframes billeges{
+  0%{
+    rotate: 3deg;
+  }
+  50%{
+    rotate: -3deg;
+  }
+  100%{
+    rotate: 3deg;
+  }
+}
+
+@keyframes szin{
+  0%{
+    background-color: #CEDDEB;
+  }
+  20%{
+    background-color: #e2bbfd;
+  }
+  40%{
+    background-color: #f49595;
+  }
+  60%{
+    background-color: #f9eb97;
+  }
+  80%{
+    background-color: #c6f9ac;
+  }
+  100%{
+    background-color: #CEDDEB;
+  }
+}
+
+@media screen and (min-width: 601px) {
+  p {
+    font-size: 16px;
+  }
+  h3{
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  p {
+    font-size: 13px;
+    line-height: 22px;
+  }
+  b{
+    padding: 1px 3px 1px 3px;
+  }
+  h3{
+    font-size: 18px;
+  }
 }
