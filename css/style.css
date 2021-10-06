@@ -5,6 +5,7 @@
 html{
   cursor: crosshair;
   scroll-behavior: smooth;
+  user-select: none;
 }
 body{
     background-color: #35383f;
@@ -32,7 +33,12 @@ b{
 
 h1{letter-spacing: 3px;}
 p{text-align: justify;}
+h3{pointer-events: none;}
 #osszefoglalo h3{background-color:#838fad; padding: 5px; border-radius: 2px;}
+
+.nav-item{
+  font-size: 13pt;
+}
 
 .news a{
   color: lightskyblue;
@@ -88,7 +94,7 @@ p{text-align: justify;}
 .logo{
   width: 45px;
   position: absolute;
-  top: 10px;
+  top: 8px;
   right: 15px;
   transition: transform 0.6s, border-radius 0.6s;
 }
@@ -102,7 +108,7 @@ p{text-align: justify;}
   transition: transform 0.6s, border-radius 0.6s;
   width: 60px;
   position: absolute;
-  top: 32px;
+  top: 28px;
   right: 32px;
 }
 
@@ -120,14 +126,7 @@ p{text-align: justify;}
 
 .title-author:hover, h2:hover{
   cursor: pointer;
-  background-color: #838fad;
-  box-shadow: 5px 5px 0px #a1a179;
-  color: white;
-}
-
-h3{
-  user-select: none;
-  pointer-events: none;
+  box-shadow: 5px 5px 0px rgb(158, 114, 107);
 }
 
 .title-author{
@@ -145,37 +144,33 @@ h3{
 #panel1,#panel2,#panel3,#panel4,#panel5,#panel6,#panel7,#panel8,#panel9{display: none}
 
 /* ANIMACIOK, TORESPONTOK */
+
+.arrow-up{transform:rotate(180deg);transition:transform 1s}
+.arrow-down{transform:rotate(0deg);transition:transform 1s}
+
+@keyframes arrow-up{
+  0%{rotate:0deg}
+  100%{rotate:180deg}
+}
+
+@keyframes arrow-down{
+  0%{rotate:180deg}
+  100%{rotate:0deg}
+}
+
 @keyframes billeges{
-  0%{
-    rotate: 3deg;
-  }
-  50%{
-    rotate: -3deg;
-  }
-  100%{
-    rotate: 3deg;
-  }
+  0%{rotate: 3deg;}
+  50%{rotate: -3deg;}
+  100%{rotate: 3deg;}
 }
 
 @keyframes szin{
-  0%{
-    background-color: #CEDDEB;
-  }
-  20%{
-    background-color: #e2bbfd;
-  }
-  40%{
-    background-color: #f49595;
-  }
-  60%{
-    background-color: #f9eb97;
-  }
-  80%{
-    background-color: #c6f9ac;
-  }
-  100%{
-    background-color: #CEDDEB;
-  }
+  0%{background-color: #CEDDEB;}
+  20%{background-color: #e2bbfd;}
+  40%{background-color: #f49595;}
+  60%{background-color: #f9eb97;}
+  80%{background-color: #c6f9ac;}
+  100%{background-color: #CEDDEB;}
 }
 
 @media screen and (min-width: 601px) {
@@ -184,6 +179,9 @@ h3{
   }
   h3{
     font-size: 22px;
+  }
+  .arrow{
+    width: 30px;
   }
 }
 
@@ -197,5 +195,8 @@ h3{
   }
   h3{
     font-size: 18px;
+  }
+  .arrow{
+    width: 25px;
   }
 }

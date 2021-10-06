@@ -21,7 +21,7 @@
     <!-- Mobil nézethez -->
     <nav class="d-block d-sm-none nav-mobile">
       <ul class="nav">
-        <img class="logo" src="img/otl.bmp" onclick="logoFunction()">
+        <img class="logo" src="img/otl.bmp" onclick="NavFunction(event)">
         <li class="dropdown">
           <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
             aria-expanded="false"><img class="menu-img" src="img/hamburger.png" alt="="></a>
@@ -47,7 +47,7 @@
           <a class="nav-link osszefoglalo" href="#osszefoglalo" onclick="NavFunction(event)">Összefoglaló</a>
         </li>
       </ul>
-      <a class="" href="#"><img src="img/otl.bmp" onclick="logoFunction()" class="otl"></a>
+      <a class="" href="#"><img src="img/otl.bmp" onclick="NavFunction(event)" class="otl"></a>
     </nav>
   </header>
 
@@ -71,11 +71,14 @@
 
     <!-- TEMAKOROK -->
     <section class="row" id="temakorok">
-      <article class="flip1 title-author my-4 col-10 col-sm-12 offset-1 offset-sm-0" onclick="dropdown(event)">
+
+      <!--###########################################################################################################-->
+      <article class="flip1 title-author my-4 col-10 offset-1 col-lg-12 offset-lg-0" onclick="dropdown(event)">
         <h3 class="float-start">Villám</h3>
-        <h3 class="float-end">Készítette: Drávai Dominik</h3>
+        <h3 class="float-end"><img src="img/arrow.png" alt="(Kattints a lenyitáshoz)" class="arrow arrow-up" id="arrow">
+        </h3>
       </article>
-      <article class="col-10 offset-1 offset-sm-0 col-sm-12 col-xl-4" id="panel1">
+      <article class="col-10 offset-1" id="panel1">
         <p>A villám nagy energiájú, természetes légköri elektromos kisülés. A villám keletkezésének folyamata még a
           tudományos viták tárgya, de az elfogadott magyarázat az hogy, a villám kialakulása a felhők vízcseppjeinek,
           vagy jégkristályainak súrlódására, széttöredezésére vezethető vissza, aminek következtében az elektromos
@@ -86,80 +89,80 @@
           levegőt a Nap felszínének hőmérsékletére, ami hirtelen kitágul és összeütközik a környező légtömegekkel, ez
           hangrobbanást okoz, ami nagy zajjal jár.</p>
       </article>
-      <article class="col-10 offset-1 offset-sm-0 col-sm-12 col-xl-4 col-md-4" id="panel2">
+      <article class="col-10 offset-1 col-lg-5" id="panel1">
         <img src="img/villam.jpg" alt="villám" class="img-fluid img-thumbnail mt-1 mb-3 d-block mx-auto">
       </article>
-      <article class="col-10 offset-1 offset-sm-0 col-sm-12 col-xl-4 col-md-8" id="panel3">
+      <article class="col-10 offset-1 col-lg-5 offset-lg-0" id="panel1">
         <p>A fény illetve hang terjedési sebessége eltér, az az különböző. A fény gyorsabb. A villámok elleni védekezés
           képpen Benjamin Franklin feltalálta a villámhárítót. Ez egy, az épületek tetején lévő, földelt fémrúd, ami az
           épület környezetében felhalmozódó elektromos töltéseket a villámhárítón keresztül vezeti el, becsapódó villám
           esetén annak az áramát a földbe vezeti, így az épületet megóvja a villámcsapástól.</p>
-      </article>
-      <article class="col-10 offset-1 offset-sm-0 col-sm-12 col-xl-4 col-md-12" id="panel3">
         <p>Viharosabb időben nagy a
           villámcsapás veszélye horgászás, csónakázás, úszás illetve kempingezés közben. Érdekesség, hogy a statisztikák
           szerint minden gyakori kereskedelmi járatot évente átlagosan legalább egyszer villámcsapás ér. Ezek esetek
           többnyire ijedelmet okoznak a gép fedélzetén ezen kívül mást nem, mivel a repülőgépek legtöbbjének teste
           elektromosan jól vezető alumíniumból vagy fémötvözetekből készül, ez pedig teljesen védi a gép berendezéseit,
           illetve az utasokat a gépen a közvetlen villámcsapástól.</p>
+        <p>Készítette: Chen Kevin</p>
       </article>
-      <article class="flip2 title-author my-4 col-10 col-sm-12 offset-1 offset-sm-0" onclick="dropdown(event)">
+
+      <!--###########################################################################################################-->
+      <article class="flip2 title-author my-4 col-10 offset-1 col-lg-12 offset-lg-0" onclick="dropdown(event)">
         <h3 class="float-start">Légnyomás</h3>
-        <h3 class="float-end">Készítette: Szlávik Bence</h3>
+        <h3 class="float-end"><img src="img/arrow.png" alt="(Kattints a lenyitáshoz)" class="arrow arrow-up" id="arrow">
+        </h3>
       </article>
-      <article class="col-10 offset-1 offset-sm-0 col-sm-12 col-xl-4" id="panel4">
+      <article class="col-10 offset-1" id="panel2">
         <p>A légnyomás adott helyen uralkodó nyomás, amelyet a levegő súlya okoz. Ebben a minőségében azonos a
           hidrosztatikai nyomással, amelyet többnyire csak folyadékok esetén értelmezünk. A Pascal-elv értelmében a
           nyomásnak irányultsága nincs. Ezért egy kisebb lokális környezetben bármelyik irányban azonos nyomást
           észlelhetünk. Légnyomást a világon először egy olasz mérte meg, név szerint Evangelista Torricelli. A nyomás
           SI-mértékegységével a gyakorlatban kifejezve a tengerszinti standard légnyomás 1013,25 hPa.</p>
       </article>
-      <article class="col-10 offset-1 offset-sm-0 col-sm-12 col-xl-4 col-md-8" id="panel6">
+      <article class="col-10 offset-1 col-lg-5 offset-lg-1 col-xl-4 my-lg-3" id="panel2">
+        <img src="img/legnyomas.png" alt="légnyomás" class="img-fluid img-thumbnail">
+      </article>
+      <article class="col-10 offset-1 col-lg-5 col-xl-6 offset-lg-0" id="panel2">
         <p>Ahogy a magasság a tengerszint felett növekszik, egyre kevesebb a levegőmolekula felettünk. Ebből adódóan a
           magassággal a légköri nyomás exponenciálisan csökken. Ezzel magyarázzuk a magassági betegség jelenségét. A
           légköri nyomás pontos értéke számításokkal nem határozható meg, mert a légkör nem viselkedik ideális gázként,
           összetétele a hely, a magasság tekintetében változó, illetve a levegő gyakran tartalmaz csapadékot és más
           szennyeződéseket is. Légnyomás mérése barométerrel vagy forrásponthőérővel lehetséges.</p>
-      </article>
-      <article class="col-10 offset-1 offset-sm-0 col-sm-12 col-xl-4 col-md-4" id="panel5">
-        <img src="img/legnyomas.png" alt="légnyomás" class="img-fluid img-thumbnail">
-      </article>
-      <article class="col-10 offset-1 offset-sm-0 col-sm-12 col-xl-4 col-md-12" id="panel6">
         <p>A légnyomás naponta változik. Ez nagyon erős a trópusi zónákban és a sarkköri területeken. A trópusokon akár
           5 mbar is lehet a változás mértéke. A legalacsonyabb nyomás 1979. október 12-én a Tip hurrikán mért 86,996
           kPa. A magyarországi rekord pedig 968,6 hPa melyet Nagykanizsán mértek 1976. december 2.-án. A legnagyobb
           légköri nyomást, 108,57 kPa-t a mongóliai Toszoncengelben mérték 2001. december 19-én. A magyarországi rekord
           pedig 1055,9 hPa melyet Budapest II. kerületében mérték 1907. január 24.-én.</p>
+        <p>Készítette: Drávai Dominik</p>
       </article>
-      <article class="flip3 title-author my-4 col-10 col-sm-12 offset-1 offset-sm-0" onclick="dropdown(event)">
+
+      <!--###########################################################################################################-->
+      <article class="flip3 title-author my-4 col-10 offset-1 col-lg-12 offset-lg-0" onclick="dropdown(event)">
         <h3 class="float-start">Szivárvány</h3>
-        <h3 class="float-end">Készítette: Chen Kevin</h3>
+        <h3 class="float-end"><img src="img/arrow.png" alt="(Kattints a lenyitáshoz)" class="arrow arrow-up" id="arrow"
+            id="arrow"></h3>
       </article>
-      <article class="col-10 offset-1 offset-sm-0 col-sm-12 col-xl-4" id="panel7">
+      <article class="col-10 offset-1 col-lg-6" id="panel3">
         <p>A szivárvány olyan optikai jelenség, melyet eső- vagy páracseppek okoznak, mikor a fény prizmaszerűen
           megtörik rajtuk és színeire bomlik, kialakul a színképe, más néven spektruma. A szivárvány akkor alakul ki, ha
           a levegőben lévő vízcseppeket a napfény alacsony szögből éri. Gyakran látható szivárvány vízesés vagy szökőkút
           mellett is. A kertben is létrejöhet, mikor porlasztott vízcseppekkel öntöz valaki napos időben. A szivárvány
-          színeit a fehér fény szétszóródása okozza, amint az áthalad az esőcseppeken. </p>
-      </article>
-      <article class="col-10 offset-1 offset-sm-0 col-sm-12 col-md-6 col-lg-4" id="panel8">
-        <img src="img/rainbow.jpg" alt="szivárvány" class="img-fluid img-thumbnail mt-1 d-block mx-auto">
-      </article>
-      <article class="col-10 offset-1 offset-sm-0 col-sm-12 col-md-6 col-xl-4" id="panel9">
-        <p>A szivárvány valójában nem az égbolton keletkezik, hanem a Nap helyzetétől
+          színeit a fehér fény szétszóródása okozza, amint az áthalad az esőcseppeken. A szivárvány valójában nem az
+          égbolton keletkezik, hanem a Nap helyzetétől
           függ, ezért nem lehet a szivárvány végéhez odamenni. Nehéz egy teljes ívet lefotózni, mivel az 84°-os
-          látószöget igényel. Néha egy halványabb és vastagabb másodlagos szivárvány is látható. A másodlagos
-          szivárványokat az okozza, hogy a fény egy része a csepp elejéről is visszatükröződik, és 50-53°-ban távozik.
-          Nehéz egy teljes ívet lefotózni, mivel az 84°-os látószöget igényel, ez egy 35 mm-es géppel számolva kb. 19
-          mm-es lencsét igényel.</p>
+          látószöget igényel.</p>
       </article>
-      <article class="col-10 offset-1 offset-sm-0 col-sm-12 mt-2" id="panel9">
+      <article class="col-10 offset-1 col-lg-4 offset-lg-0" id="panel3">
+        <img src="img/rainbow.jpg" alt="szivárvány" class="img-fluid img-thumbnail mb-lg-3 d-block mx-auto">
+      </article>
+      <article class="col-10 offset-1" id="panel3">
         <p>Néha egy halványabb és vastagabb másodlagos szivárvány is látható. A másodlagos szivárványokat az okozza,
           hogy a fény egy része a csepp elejéről is visszatükröződik, A második tükröződés eredményeként, a másodlagos
           szivárvány színei fordítottak, a ibolya van kívül és a vörös belül. A megvilágítatlan sávot a két szivárvány
           között felfedezőjéről, az ókori Aphrodisziászi Alexandroszról Alexander-féle sötét sávnak hívják. Sokszoros
           szivárványokat először Felix Billet (1808–1882) írt le. Laboratóriumi körülmények között jelentősen könnyebb
           sokszoros szivárványokat megfigyelni, lézerrel.</p>
+        <p>Készítette: Szlávik Bence</p>
       </article>
     </section>
 
@@ -212,7 +215,7 @@
   </main>
 
   <footer class="container-fluid">
-    <p class="ver">Verzió: 0.5</br>Legutóbb frissítve: 2021.10.05</p>
+    <p class="ver">Verzió: 0.5.1</br>Legutóbb frissítve: 2021.10.06</p>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"

@@ -1,6 +1,11 @@
 /*
   Készítette: Chen Kevin 10.c
 */
+
+/* VÁLTOZÓK */
+let arrowup; let kep; let flip;
+
+/* ALAPÉRTELMEZETT */
 $(document).ready(function(){
   let baseUrl = (window.location).href;
   let koopId = baseUrl.substring(baseUrl.lastIndexOf('#'));
@@ -11,6 +16,7 @@ $(document).ready(function(){
       $(".home").delay(0).fadeOut(0);
       $(koopId).delay(500).fadeIn(600)
       document.title = "OTL - "+koopId.substring(1,10);
+
     } else {
       $(".home").fadeIn(1500);
     }
@@ -19,43 +25,50 @@ $(document).ready(function(){
   }
 });
 
-function logoFunction(){
-  $(".home, #rolunk, #temakorok, #osszefoglalo").delay(150).fadeOut(500);
-  $(".home").delay(500).fadeIn(500)
-}
-
+/* NAVIGÁCIÓ */
 function NavFunction(event){
   $(".home, #rolunk, #temakorok, #osszefoglalo").delay(150).fadeOut(500);
   let page = $(event.target).attr('class').split(" ")
   console.log("Tartalom cserélése a következőre: "+page[1])
   document.title = "OTL - "+page[1]
   $(".home").delay(1000).fadeOut(600);
-  $("#"+page[1]).delay(1000).fadeIn(600)
-}
-
-function dropdownAnimation(event){
-  let flip = $(event.target).attr('class').split(" ")
-  if (flip[0] == "flip1"){
-    $("#panel1, #panel2, #panel3").slideToggle("slow");
-    $("#panel4, #panel5, #panel6, #panel7, #panel8, #panel9").slideUp();
-  } else if (flip[0] == "flip2"){
-    $("#panel4, #panel5, #panel6").slideToggle("slow");
-    $("#panel1, #panel2, #panel3, #panel7, #panel8, #panel9").slideUp();
-  } else if (flip[0] == "flip3"){
-    $("#panel7, #panel8, #panel9").slideToggle("slow");
-    $("#panel4, #panel5, #panel6, #panel1, #panel2, #panel3").slideUp();
+  if (page[0] == "logo" || page[0] == "otl"){
+    $(".home").delay(700).fadeIn(600)
+  } else {
+    $("#"+page[1]).delay(1000).fadeIn(600)
   }
 }
 
-/*$("h3").click(function(event) {
-  
-  dropdownAnimation(event);
-});*/
-
+/* LEGÖRDÜLŐ MENÜ ANIMÁCIÓ */
 function dropdown(event){
-  dropdownAnimation(event);
+  kep = document.querySelector("."+event.target.className.substring(0,5)+" "+".arrow");
+  flip = $(event.target).attr('class').split(" ")
+  if (flip[0] == "flip1"){
+    arrowRotate();
+    $("#panel1, #panel1, #panel1").slideToggle("slow");
+    $("#panel2, #panel3").slideUp();
+  } else if (flip[0] == "flip2"){
+    arrowRotate();
+    $("#panel2, #panel2, #panel2").slideToggle("slow");
+    $("#panel1, #panel3").slideUp();
+  } else if (flip[0] == "flip3"){
+    arrowRotate();
+    $("#panel3, #panel3, #panel3").slideToggle("slow");
+    $("#panel1, #panel2").slideUp();
+  }
 }
 
-$("button").click(function(){
-  $("div").animate({left: '250px'});
-});  
+/* NYÍL FORDULÁSÁNAK ANIMÁCIÓJA */
+function arrowRotate() {
+  if (arrowup == undefined){arrowup == false}
+  if (arrowup == false){
+    kep.classList.add("arrow-up")
+    kep.classList.remove("arrow-down")
+    arrowup = true;
+  } else {
+    kep.classList.add("arrow-down")
+    kep.classList.remove("arrow-up")
+    arrowup = false;
+  }
+}
+
