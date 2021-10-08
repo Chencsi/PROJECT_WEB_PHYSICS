@@ -31,7 +31,7 @@ b{
   font-weight: normal;
 }
 
-h1{letter-spacing: 3px;}
+h1{letter-spacing: 3px;} 
 p{text-align: justify;}
 h3{pointer-events: none;}
 #osszefoglalo h3{background-color:#838fad; padding: 5px; border-radius: 2px;}
@@ -141,7 +141,7 @@ h3{pointer-events: none;}
   position: relative;
 }
 
-#panel1,#panel2,#panel3,#panel4,#panel5,#panel6,#panel7,#panel8,#panel9{display: none}
+#panel1,#panel2,#panel3{display: none}
 
 /* ANIMACIOK, TORESPONTOK */
 
