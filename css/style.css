@@ -34,7 +34,10 @@ b{
 h1{letter-spacing: 3px;} 
 p{text-align: justify;}
 h3{pointer-events: none;}
-#osszefoglalo h3{background-color:#838fad; padding: 5px; border-radius: 2px;}
+#osszefoglalo h3, #rolunk h3{
+  background-color: #838fad;
+  padding: 5px;
+  border-radius: 2px;}
 
 .nav-item{
   font-size: 13pt;
@@ -124,6 +127,42 @@ h3{pointer-events: none;}
 .home{height: 100%;}
 .hide{display: none;}
 
+.kartya:hover{
+  transform: scale(102%);
+}
+
+.kartya{
+  transition: transform 0.3s;
+  background-color: white;
+  height: 100%;
+  border-radius: 20px;
+}
+
+.kartya-top{
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  background-color: #919fdd;
+}
+
+.kartya-img{
+  border-radius: 100%;
+  display: block;
+  margin: 0 auto 0 auto;
+  padding-top: 30px;
+}
+
+.kartya-name{
+  font-size: 14pt;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.kartya-text{
+  text-align: center;
+  padding: 0 10px 0 10px;
+}
+
 .title-author:hover, h2:hover{
   cursor: pointer;
   box-shadow: 5px 5px 0px rgb(158, 114, 107);
@@ -200,3 +239,4 @@ h3{pointer-events: none;}
     width: 25px;
   }
 }
+
