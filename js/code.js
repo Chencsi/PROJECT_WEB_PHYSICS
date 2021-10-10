@@ -28,8 +28,10 @@ $(document).ready(function () {
 /* NAVIGÁCIÓ */
 function NavFunction(event) {
   if ($(window).width() < 768) {
-    document.getElementById("mySidebar").classList.add("sidebar-close");
-    document.getElementById("mySidebar").classList.remove("sidebar-open");
+    if (!event.target.classList.contains("logo")){
+      document.getElementById("mySidebar").classList.add("sidebar-close");
+      document.getElementById("mySidebar").classList.remove("sidebar-open");
+    }
   }
   $(".home, #rolunk, #temakorok, #osszefoglalo").delay(150).fadeOut(500);
   let page = $(event.target).attr('class').split(" ")
@@ -79,6 +81,7 @@ function arrowRotate(event) { /* ALAPBÓL FELFELÉ NÉZ */
   }
 }
 
+/* NAVIGÁCIÓ ÖSSZECSUKÁS/KINYITÁS ANIMÁCIÓ */
 function open_close() {
   if (document.getElementById("mySidebar").classList.contains("sidebar-open")) {
     document.getElementById("mySidebar").classList.add("sidebar-close");
