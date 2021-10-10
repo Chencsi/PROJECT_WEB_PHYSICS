@@ -10,6 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="img/otl.bmp">
   <title>OTL</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.css" type="text/css">
@@ -19,7 +20,18 @@
 
   <header class="contianer">
     <!-- Mobil nézethez -->
-    <nav class="d-block d-sm-none nav-mobile">
+    <div class="w3-sidebar w3-bar-block" id="mySidebar">
+      <button onclick="open_close()" class="w3-bar-item w3-button w3-large pb-3">Bezárás &times;</button>
+      <a class="w3-bar-item rolunk w3-button" href="#rolunk" onclick="NavFunction(event)">Rólunk</a>
+      <a class="w3-bar-item temakorok w3-button" href="#temakorok" onclick="NavFunction(event)">Témakörök</a>
+      <a class="w3-bar-item osszefoglalo w3-button" href="#osszefoglalo" onclick="NavFunction(event)">Összefoglaló</a>
+      <a class="w3-bar-item w3-button" href="sites/leiras.html" target="_blank">Projekt leírás</a>
+    </div>
+    <div class="d-block d-md-none" style="background-color: #CEDDEB;">
+      <button class="w3-button w3-xlarge" onclick="open_close()">☰</button>
+      <img class="logo" src="img/otl.bmp" onclick="NavFunction(event)">
+    </div>
+    <!--<nav class="d-block d-sm-none nav-mobile">
       <ul class="nav">
         <img class="logo" src="img/otl.bmp" onclick="NavFunction(event)">
         <li class="dropdown">
@@ -29,13 +41,13 @@
             <li><a class="dropdown-item rolunk" href="#rolunk" onclick="NavFunction(event)">Rólunk</a></li>
             <li><a class="dropdown-item temakorok" href="#temakorok" onclick="NavFunction(event)">Témakörök</a></li>
             <li><a class="dropdown-item osszefoglalo" href="#osszefoglalo" onclick="NavFunction(event)">Összefoglaló</a>
-            </li>
+            <li><a class="dropdown-item" href="sites/leiras.html" target="_blank">Projekt leírás</a></li>
           </ul>
         </li>
       </ul>
-    </nav>
+    </nav>-->
     <!-- Asztali nézethez -->
-    <nav class="row d-none d-sm-block fadein" style="margin: 0 0 0 0;">
+    <nav class="row d-none d-md-block fadein" style="margin: 0 0 0 0;">
       <ul class="col-12 nav navbar justify-content-center navlinks mt-4">
         <li class="nav-item">
           <a class="nav-link rolunk" href="#rolunk" onclick="NavFunction(event)">Rólunk</a>
@@ -45,6 +57,9 @@
         </li>
         <li class="nav-item">
           <a class="nav-link osszefoglalo" href="#osszefoglalo" onclick="NavFunction(event)">Összefoglaló</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="sites/leiras.html" target="_blank">Projekt leírás</a>
         </li>
       </ul>
       <a class="" href="#"><img src="img/otl.bmp" onclick="NavFunction(event)" class="otl"></a>
@@ -65,15 +80,54 @@
     </section>
 
     <!-- ROLUNK -->
-    <section class="row" id="rolunk">
-      <h3>Hamarosan...</h3>
+    <section class="row mt-5" id="rolunk">
+
+      <article class="mt-md-5 col-10 offset-1 col-md-6 col-lg-4 offset-md-0">
+        <div class="kartya">
+          <div class="kartya-top">
+            <img class="w-50 kartya-img" src="img/portraits/kevin.jpg">
+            <p class="kartya-name">Chen Kevin</p>
+          </div>
+          <div class="kartya-right">
+            <p class="kartya-text text-dark">Elsősorban jelenleg a webfejlesztés és a projektek menedzselése érdekel. Szeretek elmélyülni az éppen aktuális projektemben és a programozásban, kikapcsolódok ilyenkor. Rendszeresen sportolok és kimozdulok a számítógépezés mellett.</p>
+          </div>
+        </div>
+      </article>
+      <article class="mt-5 col-10 offset-1 col-md-6 col-lg-4 offset-md-0">
+        <div class="kartya">
+          <div class="kartya-top">
+            <img class="w-50 kartya-img" src="img/portraits/dominik.jpg">
+            <p class="kartya-name">Drávai Dominik</p>
+          </div>
+          <div class="kartya-right">
+            <p class="kartya-text text-dark">Régebb óta érdeklődök a számítástechnika iránt, az elmúlt évek alatt webfejlesztettem. Kikapcsol, ha az elkészített munkám tökéletesen megjelenik és működik. Hobbi szinten eljárok biciklizni, egyéb sportot nem űzök.</p>
+          </div>
+        </div>
+      </article>
+      <article class="mt-5 col-10 offset-1 col-md-6 col-lg-4 offset-md-0">
+        <div class="kartya">
+          <div class="kartya-top">
+            <img class="w-50 kartya-img" src="img/portraits/bence.webp">
+            <p class="kartya-name">Szlávik Bence</p>
+          </div>
+          <div class="kartya-right">
+            <p class="kartya-text text-dark">Szeretek programozni, főleg csapatban akár a barátaimmal. Kikapcsolódással tölt el, és élvezek kreatívan elgondolkodni az adott témán. Régóta sportolok különböző helyeken, és más más témában. Jelenleg 2,5 éve járok erősítő edzésre, ami elég intenzív, és fárasztó.</p>
+          </div>
+        </div>
+      </article>
+      <!-- 
+        Elsősorban jelenleg a webfejlesztés és a projektek menedzselése érdekel. Szeretek elmélyülni az éppen aktuális projektemben és a programozásban, kikapcsolódok ilyenkor. Rendszeresen sportolok és kimozdulok a számítógépezés mellett.
+
+        Hat éves koromban beültem a számítógép elé, néha-néha játszottam kicsit, és azóta tart a szerelem. Ahogy szoftver téren, úgy hardver téren is megragadott engem a számítógép.
+      -->
+
     </section>
 
     <!-- TEMAKOROK -->
     <section class="row" id="temakorok">
 
       <!--###########################################################################################################-->
-      <article class="flip1 title-author my-4 col-10 offset-1 col-lg-12 offset-lg-0" onclick="dropdown(event)">
+      <article class="flip1 title-author mt-5 mb-4 col-10 offset-1 col-lg-12 offset-lg-0" onclick="dropdown(event)">
         <h3 class="float-start">Villám</h3>
         <h3 class="float-end"><img src="img/arrow.png" alt="(Kattints a lenyitáshoz)" class="arrow arrow-up"
             id="arrow1">
@@ -217,7 +271,7 @@
   </main>
 
   <footer class="container-fluid">
-    <p class="ver">Verzió: 0.6.2</br>Legutóbb frissítve: 2021.10.09</p>
+    <p class="ver">Verzió: 0.8</br>Legutóbb frissítve: 2021.10.10</p>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"

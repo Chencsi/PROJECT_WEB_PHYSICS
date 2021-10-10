@@ -27,6 +27,10 @@ $(document).ready(function () {
 
 /* NAVIGÁCIÓ */
 function NavFunction(event) {
+  if ($(window).width() < 768) {
+    document.getElementById("mySidebar").classList.add("sidebar-close");
+    document.getElementById("mySidebar").classList.remove("sidebar-open");
+  }
   $(".home, #rolunk, #temakorok, #osszefoglalo").delay(150).fadeOut(500);
   let page = $(event.target).attr('class').split(" ")
   console.log("Tartalom cserélése a következőre: " + page[1])
@@ -66,7 +70,7 @@ function dropdown(event) {            /* PÉLDÁUL FLIP1 */
 
 /* NYÍL FORDULÁSÁNAK ANIMÁCIÓJA */ /* HA RENDELKEZIK AZ ADOTT OSZTALLYAL, MEGKAPJA AZ ELLENKEZOJET */
 function arrowRotate(event) { /* ALAPBÓL FELFELÉ NÉZ */
-  if (kep.classList.contains("arrow-up")){
+  if (kep.classList.contains("arrow-up")) {
     kep.classList.add("arrow-down")
     kep.classList.remove("arrow-up")
   } else {
@@ -75,3 +79,12 @@ function arrowRotate(event) { /* ALAPBÓL FELFELÉ NÉZ */
   }
 }
 
+function open_close() {
+  if (document.getElementById("mySidebar").classList.contains("sidebar-open")) {
+    document.getElementById("mySidebar").classList.add("sidebar-close");
+    document.getElementById("mySidebar").classList.remove("sidebar-open");
+  } else {
+    document.getElementById("mySidebar").classList.add("sidebar-open");
+    document.getElementById("mySidebar").classList.remove("sidebar-close");
+  }
+}

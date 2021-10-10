@@ -34,7 +34,10 @@ b{
 h1{letter-spacing: 3px;} 
 p{text-align: justify;}
 h3{pointer-events: none;}
-#osszefoglalo h3{background-color:#838fad; padding: 5px; border-radius: 2px;}
+#osszefoglalo h3, #rolunk h3{
+  background-color: #838fad;
+  padding: 5px;
+  border-radius: 2px;}
 
 .nav-item{
   font-size: 13pt;
@@ -92,9 +95,9 @@ h3{pointer-events: none;}
 }
 
 .logo{
-  width: 45px;
+  width: 40px;
   position: absolute;
-  top: 8px;
+  top: 6px;
   right: 15px;
   transition: transform 0.6s, border-radius 0.6s;
 }
@@ -124,6 +127,43 @@ h3{pointer-events: none;}
 .home{height: 100%;}
 .hide{display: none;}
 
+.kartya:hover{
+  transform: scale(102%);
+}
+
+.kartya{
+  animation: pattogas 5s;
+  transition: transform 0.3s;
+  background-color: white;
+  height: 100%;
+  border-radius: 20px;
+}
+
+.kartya-top{
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  background-color: #919fdd;
+}
+
+.kartya-img{
+  border-radius: 100%;
+  display: block;
+  margin: 0 auto 0 auto;
+  padding-top: 30px;
+}
+
+.kartya-name{
+  font-size: 14pt;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.kartya-text{
+  text-align: center;
+  padding: 0 10px 0 10px;
+}
+
 .title-author:hover, h2:hover{
   cursor: pointer;
   box-shadow: 5px 5px 0px rgb(158, 114, 107);
@@ -143,10 +183,31 @@ h3{pointer-events: none;}
 
 #panel1,#panel2,#panel3{display: none}
 
+#mySidebar{
+  width: 0;
+}
+
+.sidebar-open{
+  animation: open 1s forwards;
+}
+.sidebar-close{
+  animation: close 1s forwards;
+}
+
 /* ANIMACIOK, TORESPONTOK */
 
 .arrow-up{transform:rotate(180deg);transition:transform 1s}
 .arrow-down{transform:rotate(0deg);transition:transform 1s}
+
+@keyframes open{100%{width: 50%;}}
+@keyframes close{
+  0%{
+    width: 50%;
+  }
+  100%{
+    width: 0%;
+  }
+}
 
 @keyframes arrow-up{
   0%{rotate:0deg}
@@ -162,6 +223,12 @@ h3{pointer-events: none;}
   0%{rotate: 3deg;}
   50%{rotate: -3deg;}
   100%{rotate: 3deg;}
+}
+
+@keyframes pattogas{
+  0%{
+    translate: 0 -40px;
+  }
 }
 
 @keyframes szin{
@@ -200,3 +267,4 @@ h3{pointer-events: none;}
     width: 25px;
   }
 }
+
