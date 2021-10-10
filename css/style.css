@@ -7,6 +7,7 @@ html{
   scroll-behavior: smooth;
   user-select: none;
 }
+
 body{
     background-color: #35383f;
     background-position: center;
@@ -37,7 +38,8 @@ h3{pointer-events: none;}
 #osszefoglalo h3, #rolunk h3{
   background-color: #838fad;
   padding: 5px;
-  border-radius: 2px;}
+  border-radius: 2px;
+}
 
 .nav-item{
   font-size: 13pt;
@@ -59,10 +61,6 @@ h3{pointer-events: none;}
 }
 
 /* OSZTALYOK */
-.nav-mobile{
-  position: relative;
-  background-color: #CEDDEB;
-}
 .nav-item{
   background-color: #CEDDEB;
   padding: 5px 0 5px 0;
@@ -88,10 +86,20 @@ h3{pointer-events: none;}
   letter-spacing: 2px;
 }
 
-.menu-img{
-  height: 40px;
-  width: 40px;
-  margin-top: 5px;
+.w3-sidebar a:hover{
+  background-color: #ffffff;
+  letter-spacing: 2px;
+}
+
+.w3-sidebar a{
+  color: black;
+  text-decoration: none;
+  transition: letter-spacing 0.4s, background-color 0.4s;
+}
+
+.w3-sidebar{
+  background-color: #91b8dd;
+  line-height: 40px;
 }
 
 .logo{
@@ -132,7 +140,7 @@ h3{pointer-events: none;}
 }
 
 .kartya{
-  animation: pattogas 5s;
+  animation: pattogas 3s;
   transition: transform 0.3s;
   background-color: white;
   height: 100%;
@@ -166,7 +174,6 @@ h3{pointer-events: none;}
 
 .title-author:hover, h2:hover{
   cursor: pointer;
-  box-shadow: 5px 5px 0px rgb(158, 114, 107);
 }
 
 .title-author{
@@ -174,11 +181,19 @@ h3{pointer-events: none;}
   padding: 15px 10px 10px 10px;
   border: solid 0px white;
   border-radius: 10px;
-  box-shadow: 5px 5px 0px #dddea7;
+  box-shadow: 5px 5px 0px #658099;
   color: #35383f;
   text-transform: uppercase;
-  transition: background-color 0.3s, box-shadow 0.3s, color 0.3s;
+  transition: background-color 0.3s, color 0.3s;
   position: relative;
+}
+
+.sidebar-open{
+  animation: open 1s forwards;
+}
+
+.sidebar-close{
+  animation: close 1s forwards;
 }
 
 #panel1,#panel2,#panel3{display: none}
@@ -187,22 +202,15 @@ h3{pointer-events: none;}
   width: 0;
 }
 
-.sidebar-open{
-  animation: open 1s forwards;
-}
-.sidebar-close{
-  animation: close 1s forwards;
-}
-
 /* ANIMACIOK, TORESPONTOK */
 
 .arrow-up{transform:rotate(180deg);transition:transform 1s}
 .arrow-down{transform:rotate(0deg);transition:transform 1s}
 
-@keyframes open{100%{width: 50%;}}
+@keyframes open{100%{width: 100%;}}
 @keyframes close{
   0%{
-    width: 50%;
+    width: 100%;
   }
   100%{
     width: 0%;

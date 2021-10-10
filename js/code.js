@@ -16,7 +16,6 @@ $(document).ready(function () {
       $(".home").delay(0).fadeOut(0);
       $(koopId).delay(500).fadeIn(600)
       document.title = "OTL - " + koopId.substring(1, 10);
-
     } else {
       $(".home").fadeIn(1500);
     }
@@ -29,13 +28,14 @@ $(document).ready(function () {
 function NavFunction(event) {
   if ($(window).width() < 768) {
     if (!event.target.classList.contains("logo")){
-      document.getElementById("mySidebar").classList.add("sidebar-close");
-      document.getElementById("mySidebar").classList.remove("sidebar-open");
+      setTimeout(function() {
+        $("#mySidebar").addClass("sidebar-close");
+        $("#mySidebar").removeClass("sidebar-open");
+      }, 500);
     }
   }
   $(".home, #rolunk, #temakorok, #osszefoglalo").delay(150).fadeOut(500);
   let page = $(event.target).attr('class').split(" ")
-  console.log("Tartalom cserélése a következőre: " + page[1])
   document.title = "OTL - " + page[1]
   $(".home").delay(1000).fadeOut(600);
   if (page[0] == "logo" || page[0] == "otl") {
@@ -83,11 +83,11 @@ function arrowRotate(event) { /* ALAPBÓL FELFELÉ NÉZ */
 
 /* NAVIGÁCIÓ ÖSSZECSUKÁS/KINYITÁS ANIMÁCIÓ */
 function open_close() {
-  if (document.getElementById("mySidebar").classList.contains("sidebar-open")) {
-    document.getElementById("mySidebar").classList.add("sidebar-close");
-    document.getElementById("mySidebar").classList.remove("sidebar-open");
+  if ($("#mySidebar").hasClass("sidebar-open")) {
+    $("#mySidebar").addClass("sidebar-close");
+    $("#mySidebar").removeClass("sidebar-open");
   } else {
-    document.getElementById("mySidebar").classList.add("sidebar-open");
-    document.getElementById("mySidebar").classList.remove("sidebar-close");
+    $("#mySidebar").addClass("sidebar-open");
+    $("#mySidebar").removeClass("sidebar-close");
   }
 }
